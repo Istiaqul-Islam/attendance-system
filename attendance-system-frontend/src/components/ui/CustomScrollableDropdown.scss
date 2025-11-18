@@ -1,0 +1,75 @@
+// src/components/ui/CustomScrollableDropdown.scss
+@import "../../styles/variables";
+
+.dropdown-container {
+  position: relative;
+  width: 100%;
+}
+
+.dropdown-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  cursor: pointer;
+
+  // Make it look just like our other form controls
+  &.form-control {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  &.disabled {
+    background-color: #e9ecef; // A standard light grey disabled color
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+  // The little down-arrow icon
+  .caret {
+    border: solid $text-color-light;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  &.open .caret {
+    transform: rotate(-135deg); // Flips the arrow up
+  }
+}
+
+.dropdown-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: $background-white;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  margin-top: $spacing-2;
+  padding: 0;
+  z-index: 100; // Ensure it appears on top of other content
+
+  // --- THIS IS THE KEY ---
+  max-height: 250px; // Set a fixed max-height (approx 8 items)
+  overflow-y: auto; // Add a scrollbar if the content exceeds the height
+}
+
+.dropdown-item {
+  padding: $spacing-2 $spacing-3;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: lighten($primary-color, 35%);
+  }
+
+  &.selected {
+    background-color: $primary-color;
+    color: $background-white;
+    font-weight: 500;
+  }
+}

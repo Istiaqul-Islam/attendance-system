@@ -1,0 +1,50 @@
+// src/styles/_tables.scss
+
+// A wrapper to make tables horizontally scrollable on small screens.
+.table-responsive-wrapper {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table {
+  width: 100%;
+  margin-bottom: $spacing-3;
+  border-collapse: collapse;
+  background-color: $background-white;
+  box-shadow: $box-shadow;
+  border-radius: $border-radius;
+  overflow: hidden;
+
+  th,
+  td {
+    padding: $spacing-3;
+    vertical-align: middle;
+    text-align: left;
+    border-bottom: 1px solid $border-color;
+  }
+
+  thead th {
+    font-weight: 500;
+    color: $text-color-dark;
+    background-color: $background-light;
+    border-bottom-width: 2px;
+  }
+
+  tbody {
+    tr {
+      transition: background-color 0.2s ease-in-out;
+
+      &:hover {
+        background-color: darken($background-white, 3%);
+      }
+    }
+
+    tr:last-child {
+      td {
+        border-bottom: 0;
+      }
+    }
+  }
+}

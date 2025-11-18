@@ -1,0 +1,66 @@
+// src/index.scss
+
+// 1. DEFINE SELF-HOSTED FONTS
+// This tells the browser to load our custom Poppins font from the assets folder.
+@font-face {
+  font-family: "Poppins";
+  src: url("./assets/fonts/Poppins-Regular.woff2") format("woff2");
+  font-weight: 400; // Normal weight
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./assets/fonts/Poppins-Medium.woff2") format("woff2");
+  font-weight: 500; // Medium weight
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./assets/fonts/Poppins-Bold.woff2") format("woff2");
+  font-weight: 700; // Bold weight
+  font-style: normal;
+}
+
+// 2. IMPORT THE MAIN STYLESHEET
+// This pulls in all our variables, button styles, form styles, etc.
+@import "styles/main";
+
+// 3. APPLY BASE STYLES TO THE DOCUMENT
+// These are foundational styles applied to the entire application.
+body {
+  margin: 0;
+  font-family: $primary-font; // Use the Poppins font by default
+  font-size: $font-size-base;
+  background-color: $background-light;
+  color: $text-color-dark;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3 {
+  color: $text-color-dark;
+  font-weight: 700;
+}
+
+h2 {
+  font-weight: 500;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+
+  &:hover {
+    color: $primary-color-dark;
+    text-decoration: underline;
+  }
+}
+
+ul {
+  padding-left: 0;
+  list-style: none;
+}

@@ -1,0 +1,43 @@
+// src/components/ui/ConfirmationModal.scss
+@import "../../styles/variables";
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; // Ensure it's on top of everything
+}
+
+.modal-content {
+  background: $background-white;
+  padding: $spacing-4;
+  border-radius: $border-radius;
+  width: 90%;
+  max-width: 450px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.modal-title {
+  margin-top: 0;
+  font-size: $font-size-lg;
+}
+
+.modal-message {
+  margin-bottom: $spacing-4;
+  font-size: $font-size-md;
+  line-height: 1.5;
+  color: $text-color-light;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: center;
+  gap: $spacing-3;
+}

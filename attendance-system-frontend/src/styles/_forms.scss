@@ -1,0 +1,76 @@
+// src/styles/_forms.scss
+@import "variables";
+
+// A container for label-input pairs to ensure consistent spacing
+.form-group {
+  margin-bottom: $spacing-3;
+}
+
+// Style for form labels
+.form-label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: $spacing-2;
+}
+
+// Style for text inputs and select dropdowns
+.form-control {
+  display: block;
+  width: 100%;
+  padding: $spacing-2 $spacing-3;
+  font-family: $primary-font;
+  font-size: $font-size-md;
+  line-height: 1.5;
+  color: $text-color-dark;
+  background-color: $background-white;
+  background-clip: padding-box;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  box-sizing: border-box;
+
+  &:focus {
+    color: $text-color-dark;
+    background-color: $background-white;
+    border-color: lighten($primary-color, 25%);
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba($primary-color, 0.25);
+  }
+}
+
+// Ensure select elements don't have weird default OS styling
+select.form-control {
+  appearance: none;
+}
+
+// A reusable layout for creating a single row of form controls
+.form-inline {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  gap: $spacing-3;
+
+  > * {
+    flex: 1 1 auto;
+  }
+
+  > .btn {
+    flex-grow: 0;
+  }
+}
+
+// Specific styles for <select> elements that are used as listboxes (have a size attribute).
+select.form-control[size] {
+  appearance: none; // Remove OS default styling
+  padding: 0; // Remove padding from the container so options can fill the space
+
+  option {
+    padding: $spacing-2 $spacing-3; // Add padding to the individual options
+
+    // Add a subtle hover effect for better user feedback
+    &:hover {
+      background-color: lighten($primary-color, 35%);
+      cursor: pointer;
+    }
+  }
+}

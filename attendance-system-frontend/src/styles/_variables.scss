@@ -1,0 +1,54 @@
+// src/styles/_variables.scss
+
+//1. "GROUP ALPHA" THEME
+// Primary colors derived from the logo's gradient.
+$primary-color: #00b4db; // The vibrant cyan/blue from the 'G'
+$accent-color: #a200ff; // The vibrant purple from the 'A'
+
+// A darker shade for hover states, derived from the primary color.
+$primary-color-dark: darken($primary-color, 10%);
+
+// A reusable gradient variable for buttons and backgrounds
+$primary-gradient: linear-gradient(
+  90deg,
+  $primary-color 0%,
+  $accent-color 100%
+);
+
+// Standard UI colors
+$success-color: #28a745;
+$error-color: #dc3545;
+$warning-color: #ffc107;
+
+// Grayscale and Layout Colors
+$text-color-dark: #1a1a1a; // A very dark grey for strong text contrast
+$text-color-light: #6c757d;
+$background-light: #faf9f6; // A soft, professional "cream" or off-white for the main page background
+$background-white: #ffffff; // Pure white for cards and panels
+$border-color: #e0e0e0; // A slightly lighter border color
+
+// Navbar specific colors
+$navbar-top-bg: #1a1a1a; // A sleek, dark top bar to make the logo pop
+$navbar-bottom-bg: #eaf8fc; // A distinct, light blue tint for the bottom bar
+
+// 2. TYPOGRAPHY
+$primary-font: "Poppins", sans-serif;
+$font-size-base: 16px;
+$font-size-sm: 0.875rem; // 14px
+$font-size-md: 1rem; // 16px
+$font-size-lg: 1.25rem; // 20px
+$font-size-xl: 1.75rem; // 28px
+
+// 3. SPACING
+$spacing-1: 0.25rem; // 4px
+$spacing-2: 0.5rem; // 8px
+$spacing-3: 1rem; // 16px
+$spacing-4: 1.5rem; // 24px
+$spacing-5: 3rem; // 48px
+
+// 4. BORDERS & SHADOWS
+$border-radius: 5px;
+$box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+
+// 5. BREAKPOINTS
+$breakpoint-desktop: 992px;

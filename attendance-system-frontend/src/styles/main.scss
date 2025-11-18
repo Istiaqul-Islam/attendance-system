@@ -1,0 +1,9 @@
+// src/styles/main.scss
+
+// Import all the global partials. The order is important.
+// Variables must come first so they can be used by other files.
+@import "variables";
+@import "buttons";
+@import "forms";
+@import "tables";
+@import "panels";

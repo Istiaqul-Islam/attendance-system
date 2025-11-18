@@ -1,0 +1,11 @@
+// src/components/layout/MainLayout.scss
+@import "../../styles/variables";
+
+.main-content-container {
+  max-width: 1200px; // The content will not grow wider than 1200px.
+  margin-left: auto;  // 'auto' margin on left and right centers the container.
+  margin-right: auto;
+  padding: $spacing-5 $spacing-4; // Apply vertical and horizontal padding using our variables.
+  box-sizing: border-box; // Ensures padding is included in the total width.
+  width: 100%;
+}

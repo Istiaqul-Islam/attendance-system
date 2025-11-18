@@ -1,0 +1,60 @@
+// src/styles/_buttons.scss
+@import "variables";
+
+.btn {
+  display: inline-block;
+  font-family: $primary-font;
+  font-weight: 500;
+  font-size: $font-size-md;
+  color: $background-white;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: $spacing-2 $spacing-3;
+  border-radius: $border-radius;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+  }
+}
+
+.btn-primary {
+  background-image: $primary-gradient;
+  border: none;
+  background-size: 200% auto; // For the hover effect
+
+  &:hover {
+    background-position: right center; // Slides the gradient on hover
+    box-shadow: 0 4px 12px rgba($accent-color, 0.3);
+  }
+}
+
+.btn-danger {
+  background-color: $error-color;
+  border-color: $error-color;
+
+  &:hover {
+    background-color: darken($error-color, 10%);
+    border-color: darken($error-color, 10%);
+  }
+}
+
+.btn-secondary {
+  background-color: $text-color-light;
+  border-color: $text-color-light;
+  color: $background-white;
+
+  &:hover {
+    background-color: darken($text-color-light, 10%);
+    border-color: darken($text-color-light, 10%);
+  }
+}

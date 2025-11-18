@@ -1,0 +1,170 @@
+// src/components/layout/Navbar.scss
+@import "../../styles/variables";
+
+.site-header {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07),
+    0 2px 4px -2px rgba(0, 0, 0, 0.07);
+  width: 100%;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: $primary-gradient;
+    z-index: 10;
+  }
+}
+
+// --- TOP TIER STYLES ---
+.navbar-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spacing-2 $spacing-4;
+  background-color: $navbar-top-bg;
+  color: $background-white;
+}
+
+.navbar-brand,
+.nav-user-actions,
+.user-info {
+  // Styles for these elements remain the same
+  display: flex;
+  align-items: center;
+  gap: $spacing-2;
+  text-decoration: none;
+}
+.navbar-brand .navbar-logo {
+  height: 65px;
+}
+.navbar-brand .navbar-brand-text {
+  font-size: $font-size-lg;
+  font-weight: 700;
+  color: $background-white;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+.nav-user-actions {
+  gap: $spacing-3;
+}
+.user-info {
+  font-weight: 500;
+  white-space: nowrap;
+  color: #adb5bd;
+}
+
+// --- BOTTOM TIER STYLES Gradient Theme
+.navbar-bottom {
+  display: flex;
+  align-items: center;
+  background: $primary-gradient; // Apply the gradient to the background
+  padding: 0 $spacing-4;
+  position: relative;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: $spacing-2;
+}
+
+.nav-link {
+  font-family: $primary-font;
+  font-weight: 500;
+  font-size: $font-size-md;
+  // Inactive links are a soft, semi-transparent white for readability
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  padding: $spacing-3 $spacing-2;
+  transition: all 0.2s ease-in-out;
+  border-bottom: 3px solid transparent;
+
+  &:hover {
+    // On hover, links become fully opaque white
+    color: $background-white;
+  }
+
+  // Active link style is now high-contrast and bold
+  &.active {
+    font-weight: 700;
+    color: $background-white;
+    // A solid white underline for a clean, clear active state
+    border-bottom-color: $background-white;
+  }
+}
+
+// --- RESPONSIVE STYLES ---
+.nav-toggle {
+  display: none;
+}
+
+@media (max-width: $breakpoint-desktop) {
+  .navbar-bottom {
+    padding: $spacing-2 $spacing-4;
+  }
+  .nav-toggle {
+    display: block;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+
+    // Hamburger lines must be white to be visible on the gradient
+    .hamburger,
+    .hamburger::before,
+    .hamburger::after {
+      content: "";
+      display: block;
+      background: $background-white;
+      height: 3px;
+      width: 25px;
+      border-radius: 3px;
+      transition: all 0.3s ease-in-out;
+    }
+    .hamburger::before {
+      transform: translateY(-8px);
+    }
+    .hamburger::after {
+      transform: translateY(5px);
+    }
+    &.open .hamburger {
+      background: transparent;
+    }
+    &.open .hamburger::before {
+      transform: rotate(45deg);
+    }
+    &.open .hamburger::after {
+      transform: translateY(-3px) rotate(-45deg);
+    }
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: $navbar-top-bg; // Mobile dropdown is a solid dark color for clarity
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    z-index: 1000;
+
+    &.open {
+      display: flex;
+    }
+    .nav-link {
+      width: 100%;
+      text-align: left;
+      border-bottom: 1px solid lighten($navbar-top-bg, 10%);
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+}
