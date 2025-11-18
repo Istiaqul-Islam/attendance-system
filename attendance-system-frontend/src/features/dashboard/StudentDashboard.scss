@@ -1,0 +1,14 @@
+// src/features/dashboard/StudentDashboard.scss
+@import "../../styles/variables";
+
+.dashboard-header {
+  margin-bottom: $spacing-4;
+}
+
+// A responsive grid for laying out the stat cards
+.stats-grid {
+  display: grid;
+  // On mobile, 1 column. On larger screens, up to 4 columns.
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: $spacing-4; // Space between cards
+}

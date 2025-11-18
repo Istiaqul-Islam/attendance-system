@@ -1,0 +1,16 @@
+// src/features/courses/CoursesPage.scss
+@import "../../styles/variables";
+
+.filter-panel {
+  display: flex;
+  align-items: center;
+  gap: $spacing-3;
+  max-width: 450px; // Keep the filter from becoming too wide
+  margin-bottom: $spacing-4;
+
+  label {
+    font-weight: 500;
+    flex-shrink: 0; // Prevent the label from shrinking on small screens
+    margin-bottom: 0; // Override default form-label margin
+  }
+}

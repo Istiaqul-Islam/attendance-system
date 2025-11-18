@@ -1,0 +1,74 @@
+// src/features/auth/LoginPage.scss
+@import "../../styles/variables";
+
+.login-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: $spacing-4;
+  box-sizing: border-box;
+
+  // Apply the primary gradient as the background for the entire page
+  background: $primary-gradient;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  padding: $spacing-5;
+  background-color: rgba(255, 255, 255, 0.95); // Slightly transparent white
+  border-radius: $border-radius;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+  // This creates a "frosted glass" effect if the browser supports it
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255, 255, 255, 0.3); // Subtle border
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: $spacing-4;
+
+  .login-logo {
+    height: 100px; // Larger logo on the login page
+    width: auto;
+    margin-bottom: $spacing-2;
+  }
+}
+
+// The header text inside the card
+.login-title {
+  font-size: $font-size-xl;
+  font-weight: 700;
+  color: $text-color-dark;
+  margin: 0;
+}
+
+// Style for the form labels
+.form-label {
+  font-weight: 500;
+  color: $text-color-light;
+}
+
+// Style for the login button
+.login-button {
+  width: 100%;
+  margin-top: $spacing-2;
+  padding-top: $spacing-3;
+  padding-bottom: $spacing-3;
+  font-size: $font-size-lg;
+  font-weight: 700;
+
+  // Use the same styles as our new .btn-primary from _buttons.scss
+  background-image: $primary-gradient;
+  border: none;
+  background-size: 200% auto;
+
+  &:hover {
+    background-position: right center;
+    box-shadow: 0 4px 12px rgba($accent-color, 0.3);
+  }
+}

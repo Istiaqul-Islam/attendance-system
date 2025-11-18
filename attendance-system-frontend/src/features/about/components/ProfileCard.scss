@@ -1,0 +1,60 @@
+// src/features/about/components/ProfileCard.scss
+@import "../../../styles/variables";
+
+.profile-card {
+  display: flex;
+  align-items: center;
+  gap: $spacing-4;
+  background-color: $background-white;
+  padding: $spacing-3;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.profile-card-image-container {
+  flex-shrink: 0; // Prevent the image container from shrinking
+  width: 100px;
+  height: 100px;
+}
+
+.profile-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; // Ensures the image covers the area without distortion
+  border-radius: 50%; // Makes the image circular
+  border: 3px solid $primary-color;
+}
+
+.profile-card-content {
+  flex-grow: 1;
+}
+
+.profile-card-name {
+  margin-top: 0;
+  margin-bottom: $spacing-2;
+  font-size: $font-size-lg;
+  color: $text-color-dark;
+}
+
+.profile-card-details {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    font-size: $font-size-sm;
+    color: $text-color-light;
+    margin-bottom: $spacing-1;
+
+    strong {
+      color: $text-color-dark;
+      font-weight: 500;
+    }
+  }
+}

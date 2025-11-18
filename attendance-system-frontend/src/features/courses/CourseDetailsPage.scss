@@ -1,0 +1,29 @@
+// src/features/courses/CourseDetailsPage.scss
+@import "../../styles/variables";
+
+.course-header-panel {
+  display: flex;
+  flex-wrap: wrap; // Allow items to wrap on smaller screens
+  justify-content: space-between;
+  align-items: center;
+  gap: $spacing-3;
+
+  p {
+    margin: 0;
+  }
+}
+
+.attendance-controls-panel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: $spacing-4;
+
+  .react-datepicker-wrapper {
+    flex-grow: 1;
+  }
+
+  .btn {
+    flex-shrink: 0;
+  }
+}

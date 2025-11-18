@@ -1,0 +1,12 @@
+// src/features/courses/components/CreateCourseForm.scss
+@import "../../../styles/variables";
+
+.create-course-form-layout {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-3;
+
+  .btn {
+    align-self: flex-start;
+  }
+}

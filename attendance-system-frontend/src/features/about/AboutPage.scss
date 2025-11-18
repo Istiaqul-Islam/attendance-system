@@ -1,0 +1,50 @@
+// src/features/about/AboutPage.scss
+@import "../../styles/variables";
+
+// Main layout for the entire about page
+.about-page-layout {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-5; // Creates consistent vertical space between all sections
+}
+
+.about-section {
+  h2 {
+    margin-top: 0;
+    margin-bottom: $spacing-4;
+  }
+}
+
+// Specific grid for the development team to show multiple cards
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr; // One column on mobile
+  gap: $spacing-4;
+
+  // On larger screens, create a responsive grid that can fit 2 or more cards
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
+}
+
+// Styles for the map section
+.map-container {
+  h3 {
+    margin-top: 0;
+  }
+}
+
+.map-embed {
+  position: relative;
+  overflow: hidden;
+  padding-top: 75%;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: $border-radius;
+  }
+}

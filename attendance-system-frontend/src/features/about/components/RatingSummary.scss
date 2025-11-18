@@ -1,0 +1,68 @@
+// src/features/about/components/RatingSummary.scss
+@import '../../../styles/variables';
+
+.rating-summary-container {
+  display: flex;
+  gap: $spacing-4;
+  align-items: center;
+}
+
+.summary-overview {
+  text-align: center;
+  flex-shrink: 0;
+  width: 120px;
+
+  .average-rating {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+    color: $text-color-dark;
+  }
+
+  .stars-display .star {
+    font-size: 1.2rem;
+    color: #ccc;
+    &.filled {
+      color: #ffc107; // Golden yellow for stars
+    }
+  }
+
+  .total-reviews {
+    font-size: $font-size-sm;
+    color: $text-color-light;
+    margin-top: $spacing-1;
+  }
+}
+
+.summary-bars {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-2;
+
+  .bar-row {
+    display: flex;
+    align-items: center;
+    gap: $spacing-2;
+
+    .bar-label {
+      font-size: $font-size-sm;
+      color: $text-color-light;
+    }
+
+    .bar-wrapper {
+      flex-grow: 1;
+      height: 10px;
+      background-color: #e9ecef;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      background-color: #ffc107;
+      border-radius: 5px;
+      transition: width 0.5s ease-in-out;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+// src/features/enrollments/components/EnrollmentForm.scss
+@import "../../../styles/variables";
+
+.bulk-enrollment-form {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-4;
+}
+
+.filter-section {
+  padding: $spacing-4;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  background-color: lighten($background-light, 2%);
+
+  h4 {
+    margin-top: 0;
+    margin-bottom: $spacing-3;
+  }
+}
+
+.selection-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-4;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.enroll-button-container {
+  display: flex;
+  justify-content: flex-start;
+}
